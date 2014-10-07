@@ -1,7 +1,7 @@
 Addressify Python Client
 ========================
 
-This is a simply python client for the `addressify.com.au`_ API.
+This is a simply Python client for the `addressify.com.au`_ API.
 
 *"Addressify is a cloud based web API that allows web site, web application and
 desktop application developers to easily implement free address verification,
@@ -13,7 +13,7 @@ applications."*
 Installation
 ------------
 
-Since the python addressify client has not yet been released to pypi, you will
+Since the Python addressify client has not yet been released to pypi, you will
 need to install it from git. This can still be done using pip:
 
 .. code-block:: bash
@@ -24,10 +24,10 @@ need to install it from git. This can still be done using pip:
 Usage Quickstart
 ----------------
 
-The Addressify python client currently covers all the available api calls of
+The Addressify Python client currently covers all the available api calls of
 `addressify.com.au`_. e.g.:
 
-.. code-block:: python
+.. code-block:: Python
     from addressify import Client
 
     client = Client(your_api_key)
