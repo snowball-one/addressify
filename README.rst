@@ -224,7 +224,7 @@ Example Response::
         street_line="680 GEORGE ST",
         unit_type=None
         unit_number=None,
-        postcode=2000
+        postcode="2000"
     )
 
 client.get_similar
