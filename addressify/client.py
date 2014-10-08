@@ -22,11 +22,11 @@ class Client(object):
 
     def _validate_state(self, state):
         if state is not None and state not in self.VALID_STATES:
-            raise InvalidStateError("{} is not a valid state".format(state))
+            raise InvalidStateError("{0} is not a valid state".format(state))
 
     def _make_request(self, path, params={}):
         params['api_key'] = self._api_key
-        url = "{}{}".format(self.BASE_URL, path)
+        url = "{0}{1}".format(self.BASE_URL, path)
         params = dict(filter(lambda x: x[1] != None, params.iteritems()))
         try:
             return requests.get(url, params=params).json()

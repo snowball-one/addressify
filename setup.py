@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
-from addressify import __version__
 
 setup(
     name='addressify',
-    version=__version__,
+    version="0.0.1",
     url='https://github.com/snowball-one/addressify',
     author="Jonathan Moss",
     author_email="open-sourc@snowballone.com.au",
