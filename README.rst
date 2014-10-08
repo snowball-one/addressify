@@ -18,9 +18,8 @@ Installation
 ------------
 
 Since the Python addressify client has not yet been released to pypi, you will
-need to install it from git. This can still be done using pip:
+need to install it from git. This can still be done using pip::
 
-.. code-block:: bash
     pip install git+https://github.com/snowball-one/addressify.git
 
 
