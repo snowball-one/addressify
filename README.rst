@@ -1,6 +1,10 @@
 Addressify Python Client
 ========================
 
+.. image:: https://travis-ci.org/snowball-one/addressify.svg
+    :target: https://travis-ci.org/snowball-one/addressify
+
+
 This is a simply Python client for the `addressify.com.au`_ API.
 
 *"Addressify is a cloud based web API that allows web site, web application and
