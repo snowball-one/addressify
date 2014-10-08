@@ -4,7 +4,7 @@ from __future__ import unicode_literals, absolute_import
 import re
 import requests
 
-from .exceptions import InvalidStateError
+from .exceptions import InvalidStateError, InvalidApiKeyError
 
 
 class Client(object):
@@ -16,7 +16,7 @@ class Client(object):
 
     def __init__(self, api_key, max_results=10):
         if self.GUID_REGEX.match(api_key) is None:
-            raise Exception("Invalid api_key")
+            raise InvalidApiKeyError("Invalid api_key")
         self._api_key = api_key
         self.max_results = max_results
 
@@ -27,8 +27,9 @@ class Client(object):
     def _make_request(self, path, params={}):
         params['api_key'] = self._api_key
         url = "{}{}".format(self.BASE_URL, path)
+        params = dict(filter(lambda x: x[1] != None, params.iteritems()))
         try:
-            return requests.get(url, params).json()
+            return requests.get(url, params=params).json()
         except requests.HTTPError:
             return None
 
@@ -128,32 +129,37 @@ class Client(object):
 
 class Address(object):
 
-    def __init__(self, number, street, street_type, street_suffix, street_line,
-                 suburb, unit_type, unit_number, postcode):
+    def __init__(self, unit_number, unit_type, number, street, street_type,
+                 street_suffix, street_line, suburb, state, postcode):
         """
         Simple address object which is nicer than json dict with nasty
         pascal-case names
         """
+        self.unit_number = unit_number
         self.number = number
+        self.unit_type = unit_type
         self.street = street
         self.street_type = street_type
         self.street_suffix = street_suffix
         self.street_line = street_line
         self.suburb = suburb
-        self.unit_type = unit_type
-        self.unit_number = unit_number
+        self.state = state
         self.postcode = postcode
 
     @classmethod
     def from_json(cls, json):
         return cls(
+            json.get('UnitNumber'),
+            json.get('UnitType'),
             json.get('Number'),
+
             json.get('Street'),
             json.get('StreetType'),
             json.get('StreetSuffix'),
             json.get('StreetLine'),
+
             json.get('Suburb'),
-            json.get('UnitType'),
-            json.get('UnitNumber'),
+            json.get('State'),
+
             json.get('Postcode'),
         )

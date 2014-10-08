@@ -7,7 +7,7 @@ setup(
     version=__version__,
     url='https://github.com/snowball-one/addressify',
     author="Jonathan Moss",
-    author_email="open-source@snowballone.com.au",
+    author_email="open-sourc@snowballone.com.au",
     description="A Python wrapper around Addressify.com.au's APIs",
     long_description=open('README.rst').read(),
     keywords="wrapper, addresses, addressify, post, Australia",
@@ -20,10 +20,10 @@ setup(
     ],
     # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-      'Environment :: Web Environment',
-      'Intended Audience :: Developers',
-      'License :: OSI Approved :: BSD License',
-      'Operating System :: Unix',
-      'Programming Language :: Python'
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: Unix',
+        'Programming Language :: Python'
     ]
 )
