@@ -12,7 +12,7 @@ desktop application developers to easily implement free address verification,
 validation, checking, parsing and autocomplete for Australia in their
 applications."*
 
-.. _addressify.com.au: addressify.com.au
+.. _addressify.com.au: http://www.addressify.com.au
 
 Installation
 ------------
