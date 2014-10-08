@@ -176,7 +176,7 @@ Gets a list of suburbs for the given postcode.
 
 Arguments:
 
-term (Required)
+postcode (Required)
    The postcode.
 
 
@@ -199,7 +199,7 @@ Gets the state in which the given postcode is located.
 
 Arguments:
 
-term (Required)
+postcode (Required)
    The postcode.
 
 Example Response::
